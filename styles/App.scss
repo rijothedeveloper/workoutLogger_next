@@ -1,0 +1,511 @@
+@import url("https://fonts.googleapis.com/css2?family=Allura&family=Oswald:wght@400;700&display=swap");
+
+$black-color: #030202;
+$white-color: #efefef;
+$secondary-color: #e8462d;
+// $secondary-color: #00c6fe;
+$subtitleColor: #b3b3b3;
+
+@mixin detailButton($bgColor: $secondary-color, $hoverCol: #cb1314) {
+  background-color: $bgColor;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border-color: $bgColor;
+  color: $white-color;
+  &:hover {
+    background-color: $hoverCol;
+    border-color: $hoverCol;
+  }
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+body {
+  background-color: $black-color;
+  margin: 10px;
+  color: $white-color;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: flex-end;
+  gap: 2%;
+  @media (min-width: 400px) {
+    flex-flow: row nowrap;
+  }
+  li a {
+    display: block;
+    padding: 8px;
+    text-decoration: none;
+    color: $white-color;
+    &:hover {
+      background-color: $secondary-color;
+    }
+  }
+}
+// hamburger menu style
+nav {
+  margin-bottom: 16px;
+  position: relative;
+}
+
+nav button {
+  @media (max-width: 400px) {
+    position: relative;
+    left: 0px;
+    top: 0px;
+    z-index: 10;
+    cursor: pointer;
+  }
+}
+
+.menuNav {
+  @media (max-width: 400px) {
+    overflow-y: scroll;
+    list-style: none;
+    position: fixed;
+    top: 0;
+    background: darkcyan;
+    left: 0;
+    bottom: 0;
+    height: 100vh;
+    width: 0;
+    overflow: hidden;
+    max-width: 290px;
+    z-index: 9;
+  }
+}
+
+.menuNav.showMenu {
+  @media (max-width: 400px) {
+    width: 100%;
+  }
+}
+
+nav button {
+  @media (min-width: 400px) {
+    display: none;
+  }
+}
+
+// hamburger menu style ends
+
+.titleBar {
+  background-color: #1c4245;
+  padding: 32px 0;
+  @media (min-width: 400px) {
+    padding: 64px 0;
+  }
+  .canvas {
+    margin-left: 32px;
+    .subtitle {
+      color: $subtitleColor;
+    }
+  }
+}
+
+.workout-des {
+  width: 100vw;
+  text-align: center;
+  padding: 16px;
+  img,
+  h2,
+  p {
+    margin: 16px;
+  }
+}
+
+figure {
+  max-width: 100%;
+  margin: 0px;
+  padding: 0px;
+  /* position: relative; */
+}
+
+/* figure img {
+  position: absolute;
+  top: 0%;
+  width: 100%;
+  opacity: 0.7;
+} */
+
+figCaption {
+  background-color: $black-color;
+  color: $white-color;
+  position: absolute;
+  bottom: 0%;
+  width: 100%;
+  padding: 16px;
+  opacity: 0.7;
+}
+
+form {
+  label {
+    display: block;
+    margin: 10px;
+    color: $white-color;
+  }
+  input,
+  select {
+    display: block;
+    background-color: #1e1f23;
+    border: 1px solid $secondary-color;
+    color: $white-color;
+    padding: 2px;
+  }
+  input[type="checkbox"] {
+    display: inline-block;
+    margin-left: 8px;
+  }
+  input[type="submit"] {
+    margin-left: 10px;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: $secondary-color;
+  }
+}
+
+.searchBox {
+  margin: 16px;
+  label,
+  input {
+    display: inline;
+  }
+}
+
+.home {
+  width: 100vw;
+  height: 1000px;
+  display: flex;
+}
+
+.homec {
+  flex-basis: 50%;
+  font-size: xx-large;
+  margin: 16px;
+  h1 {
+    margin-bottom: 100px;
+  }
+  img {
+    width: 100%;
+  }
+  a {
+    padding: 8px 16px;
+    margin: 16px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: $white-color;
+    background-color: $secondary-color;
+  }
+}
+
+.logo {
+  margin-right: auto;
+  img {
+    width: 100px;
+    height: auto;
+  }
+}
+
+.banner {
+  width: 100%;
+  background-color: $black-color;
+}
+
+.bannerContent {
+  width: 800px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+}
+
+.bannerDetails {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  :first-child {
+    font-family: "Allura";
+    font-size: 38px;
+  }
+  h1 {
+    font-family: "Oswald", sans-serif;
+    font-size: 70px;
+    font-weight: 700;
+  }
+  h4 {
+    font-family: "Oswald", sans-serif;
+    font-size: 22px;
+    font-weight: 400;
+  }
+  button {
+    background-color: $secondary-color;
+    padding: 8px 16px;
+    border-radius: 8px;
+    border-color: $secondary-color;
+    color: $white-color;
+  }
+}
+
+.banner-icons {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.bannerTag {
+  width: 50vw;
+  margin: auto;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+.card {
+  border: 1px solid grey;
+  border-radius: 16px;
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+  position: relative;
+  img {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+  @media (min-width: 400px) {
+    width: 200px;
+    // flex-basis: 45%;
+  }
+  @media screen and (min-width: 900px) {
+    width: 300px;
+    // flex-basis: 20%;
+  }
+  .thumbnail {
+    img {
+      max-width: 100%;
+    }
+  }
+  .detail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .heading {
+    h2,
+    .category,
+    .tags {
+      padding: 8px;
+    }
+    .category {
+      color: #cb1313;
+    }
+    .tags {
+      color: grey;
+    }
+  }
+  .button-raw {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    .detailBtn button {
+      @include detailButton;
+      margin: 8px;
+    }
+    .saveBtn button {
+      @include detailButton(#4caf50);
+      margin: 8px;
+    }
+  }
+}
+
+.checkArea {
+  display: flex;
+  flex-flow: row wrap;
+}
+.checkbox {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+
+.box {
+  border: 1px solid $secondary-color;
+  background-color: #242933;
+  padding: 32px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.inline-options {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card-column {
+  display: flex;
+  flex-direction: column;
+  :nth-child(odd) {
+    background-color: #242933;
+  }
+}
+
+.group::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-style: normal;
+  content: "\f00c";
+  margin-right: 5px;
+  color: #cb1313;
+  font-size: 0.9em;
+}
+
+.musle-container {
+  width: auto;
+  background-color: #242933;
+  padding: 32px;
+  h3 {
+    margin-bottom: 16px;
+  }
+}
+
+.main {
+  display: block;
+  position: relative;
+  padding-left: 45px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.card-raw {
+  display: flex;
+  gap: 32px;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+}
+
+.workout-raw {
+  display: flex;
+  height: 200px;
+  padding: 16px;
+  margin-bottom: 10px;
+  align-items: center;
+  img {
+    height: 100%;
+    margin-left: auto;
+    margin-right: 64px;
+  }
+}
+
+#detailButton {
+  @include detailButton;
+}
+
+.detail-container {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 32px;
+  @media (min-width: 400px) {
+    flex-flow: row;
+    justify-content: space-around;
+    img {
+      width: 400px;
+    }
+  }
+}
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 32px;
+}
+
+.muslegroup {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 32px;
+  margin-top: 64px;
+}
+
+#addButton {
+  width: 32px;
+  height: 32px;
+}
+
+/* checkbox styles */
+
+.mainCheck {
+  display: block;
+  position: relative;
+  padding-left: 45px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+#customCheck {
+  visibility: hidden;
+}
+
+.w3docs {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: white;
+}
+
+/* Specify the background color to be shown when hovering over checkbox */
+.mainCheck:hover input ~ .w3docs {
+  background-color: gray;
+}
+/* Specify the background color to be shown when checkbox is active */
+.mainCheck input:active ~ .w3docs {
+  background-color: black;
+}
+/* Specify the background color to be shown when checkbox is checked */
+.mainCheck input:checked ~ .w3docs {
+  background-color: orange;
+}
+
+/* Checkmark to be shown in checkbox */
+/* It is not be shown when not checked */
+.w3docs:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+/* Display checkmark when checked */
+.mainCheck input:checked ~ .w3docs:after {
+  display: block;
+}
+
+/* Styling the checkmark using webkit */
+/* Rotated the rectangle by 45 degree and 
+      showing only two border to make it look
+      like a tickmark */
+.mainCheck .w3docs:after {
+  left: 8px;
+  bottom: 5px;
+  width: 6px;
+  height: 12px;
+  border: solid white;
+  border-width: 0 4px 4px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
